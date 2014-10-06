@@ -248,7 +248,8 @@
      &     MESHES(NDIM,*),WEGHTS(*), POINTS(*),
      &     LOWER(*), UPPER(*), WIDTH(*), MESH(*), WORK(*) 
       INTEGER DIVAXN, TOP, RGNCLS, FUNCLS, DIFCLS
-      
+      SAVE DIVAXN
+
 *
 *     Initialization of subroutine
 *

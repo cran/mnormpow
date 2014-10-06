@@ -1,12 +1,12 @@
 # R code of package 'mnormpow'
 
-pmnormpow <- function(x, mean=rep(0,length(x)), varcov, ...)
-    sadmvng(lower=rep(-Inf, length(x)), upper=x, mean, varcov, ...) 
+pmnormpow <- function(x, varcov, ...)
+    sadmvng(lower=rep(-Inf, length(x)), upper=x, varcov, ...) 
 
-imnormpow <- function(lower,upper, mean=rep(0,length(lower)), varcov, ...)
-    sadmvng(lower=lower, upper=upper, mean, varcov, ...)
+imnormpow <- function(lower,upper, varcov, ...)
+    sadmvng(lower=lower, upper=upper, varcov, ...)
 
-sadmvng <- function(lower, upper, mean, varcov,
+sadmvng <- function(lower, upper, varcov,
                     ipuiss=1, puiss=0,
                     maxpts=2000*d, abseps=1e-6, releps=0)
 {
@@ -16,8 +16,8 @@ sadmvng <- function(lower, upper, mean, varcov,
   varcov <- matrix(varcov, d, d)
   sd  <- sqrt(diag(varcov))
   rho <- cov2cor(varcov)
-  lower <- as.double((lower-mean)/sd)
-  upper <- as.double((upper-mean)/sd)
+  lower <- lower/sd
+  upper <- upper/sd
   coeff<-(sd[ipuiss])^puiss
   if(d == 1) return(pnorm(upper)-pnorm(lower))
   infin <- rep(2,d)
@@ -37,6 +37,8 @@ sadmvng <- function(lower, upper, mean, varcov,
     }
   lower <- replace(lower, lower == -Inf, 0)
   upper <- replace(upper, upper == Inf, 0)
+  lower <- as.double(lower)
+  upper <- as.double(upper)
   correl <- as.double(rho[upper.tri(rho, diag=FALSE)])
   maxpts <- as.integer(maxpts)
   abseps <- as.double(abseps/coeff)

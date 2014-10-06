@@ -8,8 +8,8 @@
    Gaussian distribution.
 }
 \usage{
-imnormpow(lower,upper,mean=rep(0,length(lower)),varcov,...)
-pmnormpow(x,mean=rep(0,length(x)),varcov,...)
+imnormpow(lower,upper,varcov,...)
+pmnormpow(x,varcov,...)
 }
 \arguments{
   \item{x}{ a vector of length \code{d}, where \code{d=ncol(varcov)},
@@ -18,7 +18,6 @@ pmnormpow(x,mean=rep(0,length(x)),varcov,...)
   \item{lower,upper}{ two vectors of length \code{d},
     where \code{d=ncol(varcov)},
     giving the intervals bounds for integration}
-  \item{mean}{mean of the distribution}
   \item{varcov}{ a positive definite matrix representing the 
     variance-covariance  matrix of the distribution}
   \item{...}{additional arguments, such as:

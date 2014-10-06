@@ -1,5 +1,5 @@
-39fc1d1ef7e70f7bf9a890978c880b3c *DESCRIPTION
+dadc86fcda47a7dc4a27d138998dade1 *DESCRIPTION
 d90aba92c3bd9aec8ccc468adda40326 *NAMESPACE
-e36a83f8602adc8ff6fe0eb54385874a *R/mnormpow.R
-660087e17dd25617a59ab8846daea0d3 *man/mnormpow.Rd
-f9319ba7467cb0cdc9c526f0d889d100 *src/sadmvntg.f
+6a3ab55c05c3d5d83c0e98fc8aeee4ad *R/mnormpow.R
+7042281b4162c6233157aa664e7a9dcb *man/mnormpow.Rd
+d6b89d6a47586c31110b80b91631914d *src/sadmvntg.f
